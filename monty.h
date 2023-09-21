@@ -35,4 +35,6 @@ typedef struct instruction_s
 
 int _interpret(FILE *file);
 int getfile(char **buffer, size_t n, FILE *file);
+void free_as(char **as, int n);
+int get_no_line(FILE *file);
 #endif

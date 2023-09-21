@@ -10,16 +10,19 @@
  */
 int _interpret(FILE *file)
 {
-	char **buffer = malloc(sizeof(char *));
+	int a = get_no_line(file);
+
+	char **buffer = malloc(sizeof(char *) * (a + 2));
 	size_t n = 0;
-	int d;
+	int d, i = 0;
 
 	d = getfile(buffer, n, file);
 
-	printf("%d\n", d);
-	printf("%s\n", buffer[0]);
-	free(buffer);
+	printf("%d\n%d\n", d, a);
+	printf("%s\n", buffer[i]);
+
 	fclose(file);
+	free_as(buffer, n);
 
 return (d);
 }
