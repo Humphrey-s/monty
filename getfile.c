@@ -9,10 +9,10 @@
  * @file: file stream
  * Return: returns number of characters read
  */
-int getfile(char **buffer, size_t n, FILE *file)
+unsigned int getfile(char **buffer, size_t n, FILE *file)
 {
 	ssize_t no_char;
-	int i = 1;
+	unsigned int i = 1;
 	
 	no_char = getline(&buffer[0], &n, file);
 
@@ -26,7 +26,11 @@ int getfile(char **buffer, size_t n, FILE *file)
 
 return (i);
 }
-
+/**
+ * get_no_line - gets number of lines in a file
+ * @file: file stream
+ * Return: returns number of lines in a file
+ */
 int get_no_line(FILE *file)
 {
 	char c;

@@ -10,11 +10,12 @@
  */
 int _interpret(FILE *file)
 {
-	int a = get_no_line(file);
+	unsigned int a = get_no_line(file);
 
 	char **buffer = malloc(sizeof(char *) * (a + 2));
 	size_t n = 0;
-	int d, i = 0;
+	unsigned int i = 0;
+	int d;
 
 	d = getfile(buffer, n, file);
 
@@ -22,6 +23,15 @@ int _interpret(FILE *file)
 	printf("%s\n", buffer[i]);
 
 	fclose(file);
+	/*implement instructions line by line*/
+	printf("closing\n");
+
+	while (i < a)
+	{
+		printf("%s\n", buffer[i]);
+		execute_line(buffer[i], 1);
+		i++;
+	}
 	free_as(buffer, n);
 
 return (d);

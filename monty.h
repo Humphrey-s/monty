@@ -3,6 +3,10 @@
 #include <stdio.h>
 
 #define UNUSED __attribute__((unused))
+
+extern int element;
+extern int top;
+
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -33,8 +37,15 @@ typedef struct instruction_s
         void (*f)(stack_t **stack, unsigned int line_number);
 } instruction_t;
 
+int execute_line(char *line, unsigned int line_number);
 int _interpret(FILE *file);
-int getfile(char **buffer, size_t n, FILE *file);
+unsigned int getfile(char **buffer, size_t n, FILE *file);
 void free_as(char **as, int n);
 int get_no_line(FILE *file);
+void (*get_instruction(char *opcode))(stack_t **stack, unsigned int line_number);
+
+int add_node(stack_t **stack, unsigned int line_number);
+
+void _push(stack_t **stack, unsigned int line_number);
+void print_stack(stack_t **stack, unsigned int line_number);
 #endif
