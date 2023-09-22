@@ -1,15 +1,19 @@
-#include <stdlib.h>
+/*#include <stdlib.h>*/
+#include <stdio.h>
 #include <unistd.h>
 #include "monty.h"
 #include <string.h>
+
+#define _POSIX_C_SOURCE 200809L 
+
 /**
- * getfile - reads until EOF and stores in buffer
+ * get_file - reads until EOF and stores in buffer
  *
  * @buffer: where the lines are to be stored
  * @file: file stream
  * Return: returns number of characters read
  */
-unsigned int getfile(char **buffer, size_t n, FILE *file)
+unsigned int get_file(char **buffer, size_t n, FILE *file)
 {
 	ssize_t no_char;
 	unsigned int i = 1;

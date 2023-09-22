@@ -35,7 +35,7 @@ int main(int argc, char **av)
 	/*check if file exists*/
 
 	rst = stat(path, &statbuff);
-	printf("opening file\n");
+	/*printf("opening file\n");*/
 	file = fopen(path, "rw+");
 
 	if ((file == NULL) | (rst != 0))
@@ -48,7 +48,7 @@ int main(int argc, char **av)
 		return (EXIT_FAILURE);
 	}
 	free(path);
-	printf("file ready for operation\n");
+	/*printf("file ready for operation\n");*/
 
 	_interpret(file);
 

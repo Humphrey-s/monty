@@ -1,6 +1,7 @@
+#include <stdio.h>
+#include <unistd.h>
 #ifndef MONTY_H
 #define MONTY_H
-#include <stdio.h>
 
 #define UNUSED __attribute__((unused))
 
@@ -23,6 +24,7 @@ typedef struct stack_s
         struct stack_s *next;
 } stack_t;
 
+extern stack_t *head;
 /**
  * struct instruction_s - opcode and its function
  * @opcode: the opcode
@@ -39,12 +41,14 @@ typedef struct instruction_s
 
 int execute_line(char *line, unsigned int line_number);
 int _interpret(FILE *file);
-unsigned int getfile(char **buffer, size_t n, FILE *file);
+unsigned int get_file(char **buffer, size_t n, FILE *file);
 void free_as(char **as, int n);
 int get_no_line(FILE *file);
 void (*get_instruction(char *opcode))(stack_t **stack, unsigned int line_number);
 
 int add_node(stack_t **stack, unsigned int line_number);
+ssize_t getline(char **lineptr, size_t *n, FILE *stream);
+char * strdup( const char *str1 );
 
 void _push(stack_t **stack, unsigned int line_number);
 void print_stack(stack_t **stack, unsigned int line_number);

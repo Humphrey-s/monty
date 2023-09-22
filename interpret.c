@@ -17,18 +17,18 @@ int _interpret(FILE *file)
 	unsigned int i = 0;
 	int d;
 
-	d = getfile(buffer, n, file);
+	d = get_file(buffer, n, file);
 
-	printf("%d\n%d\n", d, a);
-	printf("%s\n", buffer[i]);
+	/*printf("%d\n%d\n", d, a);*/
+	/*printf("%s\n", buffer[i]);*/
 
 	fclose(file);
 	/*implement instructions line by line*/
-	printf("closing\n");
+	/*printf("closing\n");*/
 
-	while (i < a)
+	while (i < 4)
 	{
-		printf("%s\n", buffer[i]);
+		/*printf("%s\n", buffer[i]);*/
 		execute_line(buffer[i], 1);
 		i++;
 	}
