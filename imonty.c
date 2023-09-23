@@ -26,7 +26,9 @@ int main(int argc, char **av)
 		return (EXIT_FAILURE);
 	}
 
-	if ((path = strdup(av[1])) == NULL)
+	path = strdup(av[1]);
+
+	if (path == NULL)
 	{
 		free(path);
 		printf("strdup NULL\n");

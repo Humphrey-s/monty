@@ -3,6 +3,7 @@
 /**
  * free_as - free array of strings
  * @as: array of strings
+ * @n: void
  * Return: (Success)
  */
 void free_as(char **as, UNUSED int n)
@@ -22,7 +23,11 @@ void free_as(char **as, UNUSED int n)
 	free(as);
 	as = NULL;
 }
-
+/**
+ * free_stack - frees stack
+ * @stack: stack
+ * Return: (Success)
+ */
 void free_stack(stack_t **stack)
 {
 	stack_t *ptr = *stack;

@@ -3,7 +3,7 @@
 #include "monty.h"
 #include <unistd.h>
 /**
- * push - pushes an element to stack
+ * _push - pushes an element to stack
  *
  * @stack: the stack
  * @line_number: line of instruction
@@ -29,10 +29,7 @@ void _push(stack_t **stack, UNUSED unsigned int line_number)
 		ptr->prev = new_node;
 	}
 
-	
 	*stack = new_node;
-
-	/*printf("%d\n", (*stack)->n);*/
 }
 /**
  * print_stack - prints elements in a stack
@@ -42,10 +39,7 @@ void _push(stack_t **stack, UNUSED unsigned int line_number)
  */
 void print_stack(stack_t **stack, UNUSED unsigned int line_number)
 {
-	/*printf("hallo\n");*/
-
 	stack_t *ptr = *stack;
-	UNUSED int i = 0;
 
 	if (ptr == NULL)
 	{
