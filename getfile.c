@@ -17,6 +17,7 @@ unsigned int get_file(char **buffer, size_t n, FILE *file)
 {
 	ssize_t no_char;
 	unsigned int i = 1;
+	buffer[0] = NULL;
 	
 	no_char = getline(&buffer[0], &n, file);
 

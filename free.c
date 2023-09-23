@@ -22,3 +22,24 @@ void free_as(char **as, UNUSED int n)
 	free(as);
 	as = NULL;
 }
+
+void free_stack(stack_t **stack)
+{
+	stack_t *ptr = *stack;
+	stack_t *ptr2;
+
+	if (ptr == NULL)
+	{
+		free(ptr);
+	}
+
+	while (ptr != NULL)
+	{
+		ptr2 = ptr->next;
+
+		free(ptr);
+
+		ptr = ptr2;
+	}
+
+}

@@ -37,7 +37,7 @@ int execute_line(stack_t **stack, char *line, unsigned int line_number)
 	{
 		return (-1);
 	}
-	buff = malloc(sizeof(char *) * i);
+	buff = malloc(sizeof(char *) * (i + 1));
 
 	line_2 = strdup(line);
 
@@ -54,6 +54,8 @@ int execute_line(stack_t **stack, char *line, unsigned int line_number)
 		n++;
 	}
 
+	free(line_2);
+
 	buff[n] = NULL;
 
 	if (strcmp("push", buff[0]) == 0)
@@ -62,5 +64,6 @@ int execute_line(stack_t **stack, char *line, unsigned int line_number)
 	}
 	get_instruction(buff[0])(ptr2, line_number);
 
+	free_as(buff, n);
 return (0);
 }

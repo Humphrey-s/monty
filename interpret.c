@@ -34,8 +34,9 @@ int _interpret(FILE *file)
 		execute_line(&stack, buffer[i], 1);
 		i++;
 	}
+
 	fflush(stdout);
 	free_as(buffer, n);
-
+	free_stack(&stack);
 return (d);
 }

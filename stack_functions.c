@@ -14,17 +14,23 @@ void _push(stack_t **stack, UNUSED unsigned int line_number)
 	stack_t *new_node = malloc(sizeof(stack_t));
 	stack_t *ptr = *stack;
 
-		new_node->n = element;
-		new_node->prev = NULL;
-	
-	if (ptr != NULL)
+	if (new_node == NULL)
 	{
-		new_node->next = ptr;
+		free(new_node);
 	}
 
-	ptr = new_node;
 
-	*stack = ptr;
+	new_node->n = element;
+	new_node->prev = NULL;
+	new_node->next = ptr;
+
+	if (*stack != NULL)
+	{
+		ptr->prev = new_node;
+	}
+
+	
+	*stack = new_node;
 
 	/*printf("%d\n", (*stack)->n);*/
 }

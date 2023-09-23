@@ -52,4 +52,6 @@ char * strdup( const char *str1 );
 
 void _push(stack_t **stack, unsigned int line_number);
 void print_stack(stack_t **stack, unsigned int line_number);
+
+void free_stack(stack_t **stack);
 #endif
