@@ -12,6 +12,7 @@
 void _error(UNUSED stack_t **stack, unsigned int line_number)
 {
 	char str[1024];
+
 	atoil(line_number, str);
 
 	write(2, "L", 1);
@@ -19,7 +20,9 @@ void _error(UNUSED stack_t **stack, unsigned int line_number)
 	write(2, ": unknown instruction\n", strlen(": unknown instruction\n"));
 }
 /**
- * atol - converts integer to string
+ * atoil - converts integer to string
+ * @n: integer
+ * @str: string
  * Return: (Success)
  */
 void atoil(unsigned int n, char *str)
