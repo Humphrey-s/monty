@@ -31,7 +31,7 @@ int _interpret(FILE *file)
 	while (i < a)
 	{
 		/*printf("%s\n", buffer[i]);*/
-		execute_line(&stack, buffer[i], 1);
+		execute_line(&stack, buffer[i], a);
 		i++;
 	}
 

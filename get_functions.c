@@ -14,7 +14,7 @@ void (*get_instruction(char *op))(stack_t **stack, unsigned int line_number)
 instruction_t stp[] = {
 	{"push", _push},
 	{"pall", print_stack},
-	{NULL, NULL},
+	{NULL, _error},
 };
 int i = 0;
 
