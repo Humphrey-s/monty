@@ -12,19 +12,21 @@
 void _push(stack_t **stack, UNUSED unsigned int line_number)
 {
 	stack_t *new_node = malloc(sizeof(stack_t));
+	stack_t *ptr = *stack;
 
 		new_node->n = element;
 		new_node->prev = NULL;
 	
-	if (*stack != NULL)
+	if (ptr != NULL)
 	{
-		new_node->next = *stack;
+		new_node->next = ptr;
 	}
-	top += 1;
 
-	*stack = new_node;
+	ptr = new_node;
 
-	printf("%d\n", (*stack)->n);
+	*stack = ptr;
+
+	/*printf("%d\n", (*stack)->n);*/
 }
 /**
  * print_stack - prints elements in a stack

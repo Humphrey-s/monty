@@ -6,7 +6,7 @@
 #define UNUSED __attribute__((unused))
 
 extern int element;
-extern int top;
+/*extern int top;*/
 
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)

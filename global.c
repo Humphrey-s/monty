@@ -1,3 +1,3 @@
 int element;
 
-int top;
+/*int top;*/

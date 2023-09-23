@@ -16,7 +16,7 @@ int execute_line(stack_t **stack, char *line, unsigned int line_number)
 	char *line_2;
 	char **buff;
 	char *ptr;
-	stack_t *ptr2 = *stack;
+	stack_t **ptr2 = stack;
 	int i = 0;
 	int n = 0;
 
@@ -60,7 +60,7 @@ int execute_line(stack_t **stack, char *line, unsigned int line_number)
 	{
 		element = atoi(buff[1]);
 	}
-	get_instruction(buff[0])(&ptr2, line_number);
+	get_instruction(buff[0])(ptr2, line_number);
 
 return (0);
 }
