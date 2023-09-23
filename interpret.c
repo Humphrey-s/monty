@@ -26,7 +26,7 @@ int _interpret(FILE *file)
 	/*implement instructions line by line*/
 	/*printf("closing\n");*/
 
-	while (i < 4)
+	while (i < a)
 	{
 		/*printf("%s\n", buffer[i]);*/
 		execute_line(buffer[i], 1);
