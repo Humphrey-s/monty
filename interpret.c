@@ -17,6 +17,8 @@ int _interpret(FILE *file)
 	unsigned int i = 0;
 	int d;
 
+	stack_t *stack = NULL;
+
 	d = get_file(buffer, n, file);
 
 	/*printf("%d\n%d\n", d, a);*/
@@ -29,9 +31,10 @@ int _interpret(FILE *file)
 	while (i < a)
 	{
 		/*printf("%s\n", buffer[i]);*/
-		execute_line(buffer[i], 1);
+		execute_line(&stack, buffer[i], 1);
 		i++;
 	}
+	fflush(stdout);
 	free_as(buffer, n);
 
 return (d);

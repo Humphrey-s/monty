@@ -9,19 +9,22 @@
  * @line_number: line of instruction
  * Return: (Success)
  */
-void _push(UNUSED stack_t **stack, UNUSED unsigned int line_number)
+void _push(stack_t **stack, UNUSED unsigned int line_number)
 {
 	stack_t *new_node = malloc(sizeof(stack_t));
 
 		new_node->n = element;
 		new_node->prev = NULL;
 	
-	if (head != NULL)
+	if (*stack != NULL)
 	{
-		new_node->next = head;
+		new_node->next = *stack;
 	}
+	top += 1;
 
-	head = new_node;
+	*stack = new_node;
+
+	printf("%d\n", (*stack)->n);
 }
 /**
  * print_stack - prints elements in a stack
@@ -29,11 +32,12 @@ void _push(UNUSED stack_t **stack, UNUSED unsigned int line_number)
  * @line_number: line number
  * Return: (Success)
  */
-void print_stack(UNUSED stack_t **stack, UNUSED unsigned int line_number)
+void print_stack(stack_t **stack, UNUSED unsigned int line_number)
 {
 	/*printf("hallo\n");*/
 
-	stack_t *ptr = head;
+	stack_t *ptr = *stack;
+	UNUSED int i = 0;
 
 	if (ptr == NULL)
 	{
