@@ -16,6 +16,7 @@ instruction_t stp[] = {
 	{"push", _push},
 	{"pall", print_stack},
 	{"pint", _pint},
+	{"swap", _swap},
 	{"pop", _pop},
 	{NULL, _error},
 };
