@@ -13,6 +13,7 @@ void _error(UNUSED stack_t **stack, unsigned int line_number)
 {
 	char str[1024];
 
+	line_number = line_number - 1;
 	atoil(line_number, str);
 
 	write(2, "L", 1);
