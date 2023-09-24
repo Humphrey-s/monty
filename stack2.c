@@ -47,6 +47,12 @@ int execute_line(stack_t **stack, char *line, unsigned int line_number)
 	buff[n] = NULL;
 	if (strcmp("push", buff[0]) == 0)
 	{
+	
+		if ((buff[1] == NULL) || (atoi(buff[1]) == 0))
+		{
+			fprintf(stderr, "L%u: usage: push integer\n", line_number);
+			exit(EXIT_FAILURE);
+		}
 		element = atoi(buff[1]);
 	}
 	get_instruction(buff[0])(ptr2, line_number);
