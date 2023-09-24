@@ -32,7 +32,7 @@ while (stp[i].opcode != NULL)
 
 if (stp[i].opcode == NULL && op[0] != NULL)
 {
-	fprintf(stderr, "L%u: unknown instruction %s", n, l);
+	fprintf(stderr, "L%u: unknown instruction %s\n", n, op[0]);
 	free_as(op, 1);
 	free(l);
 }
