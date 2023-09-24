@@ -21,13 +21,7 @@ void _pop(stack_t **stack, unsigned int line_number)
 	}
 
 
-	if (ptr == NULL)
-	{
-		free(*stack);
-		exit(127);
-	}
 
-	free(ptr2);
 	*stack = ptr;
-	(*stack)->prev = NULL;
+	free(ptr2);
 }
