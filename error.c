@@ -19,6 +19,8 @@ void _error(UNUSED stack_t **stack, unsigned int line_number)
 	write(2, "L", 1);
 	write(2, str, strlen(str));
 	write(2, ": unknown instruction\n", strlen(": unknown instruction\n"));
+
+	exit(EXIT_FAILURE);
 }
 /**
  * atoil - converts integer to string
