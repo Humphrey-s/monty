@@ -1,4 +1,4 @@
 push 1
 push 2
-pushe
+pushe 8
 pall

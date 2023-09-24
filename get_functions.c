@@ -4,12 +4,13 @@
 #include <unistd.h>
 #include <string.h>
 /**
- * get_instruction - matches opcode to the appropriate functions
+ * get_i - matches opcode to the appropriate functions
  * @n: line number
+ * @l: line
  * @op: opcode instruction
  * Return: 1 if success or 0 if failure
  */
-void (*get_instruction(char *op, unsigned int n))(stack_t **st, unsigned int n)
+void (*get_i(char *op, unsigned int n, char *l))(stack_t **st, unsigned int n)
 {
 instruction_t stp[] = {
 	{"push", _push},
@@ -29,7 +30,7 @@ while (stp[i].opcode != NULL)
 
 if (stp[i].opcode == NULL && op != NULL)
 {
-	fprintf(stderr, "L%u: unknown instruction %s\n", n - 1, op);
+	fprintf(stderr, "L%u: unknown instruction %s", n - 1, l);
 	exit(EXIT_FAILURE);
 }
 

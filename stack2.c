@@ -49,7 +49,7 @@ int execute_line(stack_t **stack, char *line, unsigned int line_number)
 	{
 		element = _atoi(buff[1], line_number);
 	}
-	get_instruction(buff[0], line_number)(ptr2, line_number);
+	get_i(buff[0], line_number, line)(ptr2, line_number);
 	free_as(buff, n);
 return (0);
 }
