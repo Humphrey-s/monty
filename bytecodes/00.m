@@ -1,5 +1,5 @@
 push 1
-pnit
+push 123a
 push 2   
 pint
 push 5

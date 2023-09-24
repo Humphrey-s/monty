@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include <string.h>
+#include <ctype.h>
 /**
  * _atoi - converts a string to int
  * @str: string
@@ -19,18 +20,22 @@ int _atoi(char *str, unsigned int n)
 		exit(EXIT_FAILURE);
 	}
 
-	if (strcmp("0", str) == 0)
+	while (str[i] != '\0')
 	{
-		return (0);
+		if (isalpha(str[i]) != 0)
+		{
+			i = -1;
+			break;
+		}
+
+		i++;
 	}
 
-	i = atoi(str);
-
-	if (i == 0)
+	if (i == -1)
 	{
 		fprintf(stderr, "L%u: usage: push integer\n", n);
 		exit(EXIT_FAILURE);
 	}
 
-	return (i);
+	return (atoi(str));
 }
