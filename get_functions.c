@@ -10,28 +10,29 @@
  * @op: opcode instruction
  * Return: 1 if success or 0 if failure
  */
-void (*get_i(char *op, unsigned int n, char *l))(stack_t **st, unsigned int n)
+void (*get_i(char **op, unsigned int n, char *l))(stack_t **st, unsigned int n)
 {
 instruction_t stp[] = {
 	{"push", _push},
 	{"pall", print_stack},
-	{NULL, NULL},
+	{NULL, _error},
 };
 int i = 0;
 
 while (stp[i].opcode != NULL)
 {
-	if (strcmp(stp[i].opcode, op) == 0)
+	if (strcmp(stp[i].opcode, op[0]) == 0)
 	{
 		break;
 	}
 	i++;
 }
 
-if (stp[i].opcode == NULL && op != NULL)
+if (stp[i].opcode == NULL && op[0] != NULL)
 {
 	fprintf(stderr, "L%u: unknown instruction %s", n - 1, l);
-	exit(EXIT_FAILURE);
+	free_as(op, 1);
+	free(l);
 }
 
 return (stp[i].f);

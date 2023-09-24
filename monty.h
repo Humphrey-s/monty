@@ -44,7 +44,7 @@ int _interpret(FILE *file);
 unsigned int get_file(char **buffer, size_t n, FILE *file);
 void free_as(char **as, int n);
 int get_no_line(FILE *file);
-void (*get_i(char *opcode, unsigned int n, char *line))(stack_t **stack, unsigned int line_number);
+void (*get_i(char **opcode, unsigned int n, char *line))(stack_t **stack, unsigned int line_number);
 
 int add_node(stack_t **stack, unsigned int line_number);
 ssize_t getline(char **lineptr, size_t *n, FILE *stream);
