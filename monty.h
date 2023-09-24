@@ -55,6 +55,7 @@ void print_stack(stack_t **stack, unsigned int line_number);
 void _pint(stack_t **stack, unsigned int line_number);
 void _pop(stack_t **stack, unsigned int line_number);
 void _swap(stack_t **stack, unsigned int line_number);
+void _add(stack_t **stack, unsigned int line_number);
 
 void free_stack(stack_t **stack);
 void atoil(unsigned int num, char *str);
