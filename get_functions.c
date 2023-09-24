@@ -19,6 +19,7 @@ instruction_t stp[] = {
 	{"swap", _swap},
 	{"add", _add},
 	{"pop", _pop},
+	{"nop", _nop},
 	{NULL, _error},
 };
 int i = 0;
