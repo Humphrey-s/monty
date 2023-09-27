@@ -1,5 +1,5 @@
 push 98
-push 402
-push 67
-sub
+push 24
+push 2
+div
 pall

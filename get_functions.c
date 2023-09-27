@@ -21,6 +21,7 @@ instruction_t stp[] = {
 	{"pop", _pop},
 	{"nop", _nop},
 	{"sub", _sub},
+	{"div", _div},
 	{NULL, _error},
 };
 int i = 0;
