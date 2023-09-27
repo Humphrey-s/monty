@@ -20,6 +20,7 @@ instruction_t stp[] = {
 	{"add", _add},
 	{"pop", _pop},
 	{"nop", _nop},
+	{"sub", _sub},
 	{NULL, _error},
 };
 int i = 0;

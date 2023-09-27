@@ -1,5 +1,5 @@
 push 98
 push 402
-add Holberton
-nop
+push 67
+sub
 pall
